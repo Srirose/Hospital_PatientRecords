@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Edit Patient</h3>
+<form method="post">
+    <input class="form-control mb-2" name="name" value="{{ patient.name }}" required>
+    <input class="form-control mb-2" name="age" type="number" value="{{ patient.age }}" required>
+    <select class="form-control mb-2" name="gender" required>
+        <option {% if patient.gender=='Male' %}selected{% endif %}>Male</option>
+        <option {% if patient.gender=='Female' %}selected{% endif %}>Female</option>
+        <option {% if patient.gender=='Other' %}selected{% endif %}>Other</option>
+    </select>
+    <select class="form-control mb-2" name="doctor_id">
+        {% for d in doctors %}
+        <option value="{{ d.id }}" {% if patient.doctor_id == d.id %}selected{% endif %}>
+            {{ d.name }} - {{ d.specialization }}
+        </option>
+        {% endfor %}
+    </select>
+    <button class="btn btn-primary">Update</button>
+</form>
+{% endblock %}

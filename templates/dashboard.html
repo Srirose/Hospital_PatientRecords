@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Welcome, {{ session['user'] }}!</h3>
+<p class="lead">This is your hospital records dashboard.</p>
+<a href="/patients" class="btn btn-primary">Manage Patients</a>
+<a href="/doctors" class="btn btn-secondary">Manage Doctors</a>
+{% endblock %}

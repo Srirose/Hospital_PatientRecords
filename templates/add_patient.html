@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Add Patient</h3>
+<form method="post">
+    <input class="form-control mb-2" name="name" placeholder="Name" required>
+    <input class="form-control mb-2" name="age" type="number" placeholder="Age" required>
+    <select class="form-control mb-2" name="gender" required>
+        <option value="">Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select>
+    <select class="form-control mb-2" name="doctor_id">
+        <option value="">Select Doctor</option>
+        {% for d in doctors %}
+        <option value="{{ d.id }}">{{ d.name }} - {{ d.specialization }}</option>
+        {% endfor %}
+    </select>
+    <button class="btn btn-success">Add</button>
+</form>
+{% endblock %}

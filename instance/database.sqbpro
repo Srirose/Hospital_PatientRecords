@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="database.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1649"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="appointment" custom_title="0" dock_id="1" table="4,11:mainappointment"/><dock_state state="000000ff00000000fd00000001000000020000000000000000fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000011300ffffff000000000000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1*">-- 1. Get all patients
+
+-- SELECT * FROM Patient;
+
+-- 
+
+-- 2. Search patient by name
+
+SELECT * FROM Patient WHERE name LIKE '%Bala%';
+
+-- 
+
+-- -- 3. List all patients with a specific disease
+
+-- SELECT * FROM Patient WHERE Sickness = 'Fever';
+
+-- -- 
+
+-- -- 4. Count of total patients
+SELECT COUNT(*) AS total_patients FROM Patient;
+
+-- 
+
+-- -- 5. Patients admitted after a certain date
+
+-- SELECT * FROM Patient WHERE admitted_date &gt; '2025-01-01';
+
+
+
+-- 6. Get all doctors
+
+-- SELECT * FROM Doctor;
+
+
+
+-- 7. Find doctors by specialization
+
+-- SELECT * FROM Doctors WHERE specialization = 'Cardiologist';
+
+-- 
+
+-- -- 8. List of doctors sorted by experience
+
+-- SELECT * FROM Doctors ORDER BY experience_years DESC;
+
+-- 
+
+-- -- 9. Count doctors by department
+
+-- SELECT department, COUNT(*) AS doctor_count
+
+-- FROM Doctor
+
+-- GROUP BY department;
+
+-- -- 
+
+-- -- 10. Get all appointments
+
+-- SELECT * FROM Appointment;
+
+
+
+-- Count today's appointments
+
+SELECT COUNT(*) AS todays_appointments
+
+FROM Appointment
+
+WHERE DATE(appointment_date) = CURRENT_DATE;
+
+-- 
+
+-- SELECT * FROM Patients
+
+-- WHERE id NOT IN (SELECT patient_id FROM Appointments);</sql><current_tab id="0"/></tab_sql></sqlb_project>

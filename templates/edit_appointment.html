@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Edit Appointment</h3>
+<form method="POST">
+    <label>Patient</label>
+    <select name="patient_id" class="form-control mb-2">
+        {% for p in patients %}
+            <option value="{{ p.id }}" {% if p.id == appointment.patient_id %}selected{% endif %}>{{ p.name }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Doctor</label>
+    <select name="doctor_id" class="form-control mb-2">
+        {% for d in doctors %}
+            <option value="{{ d.id }}" {% if d.id == appointment.doctor_id %}selected{% endif %}>{{ d.name }}</option>
+        {% endfor %}
+    </select>
+
+    <input type="date" name="date" class="form-control mb-2" value="{{ appointment.date }}" required>
+    <textarea name="sickness" class="form-control mb-2" required>{{ appointment.sickness }}</textarea>
+    <textarea name="medicines" class="form-control mb-2" required>{{ appointment.medicines }}</textarea>
+    <textarea name="notes" class="form-control mb-2">{{ appointment.notes }}</textarea>
+
+    <button class="btn btn-success">Update</button>
+</form>
+{% endblock %}
