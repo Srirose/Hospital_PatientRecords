@@ -10,9 +10,9 @@ Second task of Tamizhan Skills internship
  delete, and search patient data.
 
 # Technologies used
-  *Python(Flask framework) for front-end
-  *SQLite for database
-  *Bootstrap for designing
+   *Python(Flask framework) for front-end
+   *SQLite for database
+   *Bootstrap for designing
 # Tables created
   *patient
   *Doctor
