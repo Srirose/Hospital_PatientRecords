@@ -1,5 +1,5 @@
 # Hospital Patient Records
-This project is my first python project usin flask framework and SqLite
+This project is my first python project usin flask framework and SqLite.
 Second task of Tamizhan Skills internship
 # Problem Statement
    Hospitals need to manage growing patient and doctor records
